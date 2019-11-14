@@ -63,6 +63,12 @@ Therefore the car at max speed would go past ~7 waypoints in 1 seconds, therefor
 Now the at 4 m/s the car moves quite fast, and event if an steering angle and throttle are selected, they re not effective immedaitely.
 So let's write function to looks at steering based on the next waypoint or two waypoints ahead or three waypoints ahead.
 
+Before we code we need some basic trig, so let's work out how to derivate the direction in degrees to 2 waypoints ahead of the current waypoint.
+
+(/trig.jpg)
+
+Now let's code..... here's an example from the 3 I wrote..
+
 ```
 def reward_function(params):
 
@@ -110,10 +116,25 @@ if heading_difference > 180:
 return reward
 ```
 
+### Waypoint Based Reward Functions and Variations
 
+I decided to make three variations of my waypoint reward function to compare performance:
+* One Waypoint - reward based how close car direction is the the direction of the next waypoint
+* Two Waypoints - reward based how close car direction is the the direction of 2 waypoints ahead
+* Three Waypoints - reward based how close car direction is the the direction of 3 waypoints ahead
 
+Whilst looking at the performance on these, I noticed that the default reward graph in the Deep Racer panel can be very deceptive.
 
+I wanted to have a high track completion rate, so a long as the reward function was generally increasing I wanted to have a high track completion % before trying to work on oging faster.
 
+However as the results are averaged, they are deceptive:
+* You can have many episode that have high track completion e.g. > 90%, but it only takes a few low track completion episode to skew the average.
+
+#### Default Reward Plot - Indicate Low Average Track Completion
+(/default_reward_graph.PNG)
+
+#### Change Reward Plot - Show % Completion for all Episodes - Actually Many Episode have high completion rates
+(/modified_reward_graph.PNG)
 
 
 
