@@ -1,10 +1,10 @@
-# My Approach to awsdeepracer
+# My Approach to AWS Deep Racer
 
-There is lot out there about AWS Deepracer, but in the pursuit of self exploration, I decided to try a few things without any deep research to what has already been done, and to come up with some finding myself.
+There is lot out there about AWS Deepracer, but in the pursuit of exploring and investigating myself, I decided to try a few things without any deep research to what has already been done, and to come up with some finding of my own.
 
 ### Variables
 
-The first thing I wanted to understand are what input variables are.
+The first thing I wanted to understand are the sensitivity and effect of the input variables.
 
 Firstly the action space comprises of:
 * steering anlge (0-30 degrees)
@@ -16,12 +16,16 @@ The combination of these gives an action space. After the CNN is trained in the 
 
 My thinking was that a reduced action space may allow for potentially a faster "driver", but also likely more erratic".
 
+### Initial Results
+
+So let's look at some of the initial results:
+
+![table](/first_tests.png)
+
 The main issues that I found with this approach are:
 * It limit exploration of the entire environment - one of the strnegths of reinforcement learning is that the AI exlpores the environment and the reward function determines how to improve the model
 * When you run a simulation and gather results, you can then clone the model, which retains all of the previous training and then can continue to develop your reward function. However once a model is started and then cloned, you cannot change the action space. This makes sense as the CNN has assigned weight to the nodes within each layer that at least in the last layer of the CNN, as directly related to the lookup table and max possible actions.
 
-### Initial Results
 
-So let's look at some of the initial results:
 
 
