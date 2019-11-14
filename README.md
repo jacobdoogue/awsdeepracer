@@ -142,10 +142,10 @@ However as the results are averaged, they are deceptive:
 ![one](/one_waypoint.PNG)
 
 ### Two Waypoints Ahead
-![two](/two_waypoint.PNG)
+![two](/two_waypoints.PNG)
 
 ### Three Waypoints Ahead
-![three](/three_waypoint.PNG)
+![three](/three_waypoints.PNG)
 
 
 
