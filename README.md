@@ -65,7 +65,7 @@ So let's write function to looks at steering based on the next waypoint or two w
 
 Before we code we need some basic trig, so let's work out how to derivate the direction in degrees to 2 waypoints ahead of the current waypoint.
 
-(/trig.jpg)
+![trig](/trig.jpg)
 
 Now let's code..... here's an example from the 3 I wrote..
 
@@ -131,10 +131,10 @@ However as the results are averaged, they are deceptive:
 * You can have many episode that have high track completion e.g. > 90%, but it only takes a few low track completion episode to skew the average.
 
 #### Default Reward Plot - Indicate Low Average Track Completion
-(/default_reward_graph.PNG)
+![plot1](/default_reward_graph.PNG)
 
 #### Change Reward Plot - Show % Completion for all Episodes - Actually Many Episode have high completion rates
-(/modified_reward_graph.PNG)
+![plot2](/modified_reward_graph.PNG)
 
 
 
