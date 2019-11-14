@@ -22,9 +22,21 @@ So let's look at some of the initial results:
 
 ![table](/first_tests.png)
 
-The main issues that I found with this approach are:
-* It limit exploration of the entire environment - one of the strnegths of reinforcement learning is that the AI exlpores the environment and the reward function determines how to improve the model
+hmmmm.
+
+#### Issues:
+* Low track completion rates (in simulation and evaluation)
+* There did not seem to be a clear advantage to the reduced action space vs max action space
+* Initial faster speeds of 4m/s for initial training seem too aggressive
+
+#### Think about it more:
+
+* A reduced action space limits exploration of the entire environment - one of the strnegths of reinforcement learning is that the AI exlpores the environment and the reward function determines how to improve the model
 * When you run a simulation and gather results, you can then clone the model, which retains all of the previous training and then can continue to develop your reward function. However once a model is started and then cloned, you cannot change the action space. This makes sense as the CNN has assigned weight to the nodes within each layer that at least in the last layer of the CNN, as directly related to the lookup table and max possible actions.
+
+So at this point I kind of went back to thr drawing board, but had a better idea of what not to do.
+
+
 
 
 
