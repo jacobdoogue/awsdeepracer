@@ -130,14 +130,22 @@ I wanted to have a high track completion rate, so a long as the reward function 
 However as the results are averaged, they are deceptive:
 * You can have many episode that have high track completion e.g. > 90%, but it only takes a few low track completion episode to skew the average.
 
-#### Default Reward Plot - Indicate Low Average Track Completion
+## Default Reward Plot - Indicate Low Average Track Completion
 ![plot1](/default_reward_graph.PNG)
 
-#### Change Reward Plot - Show % Completion for all Episodes - Actually Many Episode have high completion rates
+## Change Reward Plot - Show % Completion for all Episodes - Actually Many Episode have high completion rates
 ![plot2](/modified_reward_graph.PNG)
 
+## Results of Waypoint based Reward Functions
 
+### One Waypoint
+![one](/one_waypoint.PNG)
 
+### Two Waypoints Ahead
+![two](/two_waypoint.PNG)
+
+### Three Waypoints Ahead
+![three](/three_waypoint.PNG)
 
 
 
