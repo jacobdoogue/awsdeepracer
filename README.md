@@ -130,13 +130,17 @@ I wanted to have a high track completion rate, so a long as the reward function 
 However as the results are averaged, they are deceptive:
 * You can have many episode that have high track completion e.g. > 90%, but it only takes a few low track completion episode to skew the average.
 
-## Default Reward Plot - Indicate Low Average Track Completion
+## Default Reward Plot
+### Can be misleading, as it indicates low average track completion
 ![plot1](/default_reward_graph.PNG)
 
-## Change Reward Plot - Show % Completion for all Episodes - Actually Many Episode have high completion rates
+## Change Reward Plot
+### Show % Completion for all Episodes - Actually Many Episode have high completion rates
 ![plot2](/modified_reward_graph.PNG)
 
 ## Results of Waypoint based Reward Functions
+
+So let's look at the results from these reward functions...
 
 ### One Waypoint
 ![one](/one_waypoint.PNG)
@@ -146,6 +150,15 @@ However as the results are averaged, they are deceptive:
 
 ### Three Waypoints Ahead
 ![three](/three_waypoints.PNG)
+
+These were all completed with slower max speed in the action space, than what I had intended, however the 2 waypoint seemed to have higher track completions, more consistently.
+
+So my plan was to focus on accuracy first, e.g ensure consistently the car completes the track, then to work on speed after that by additional training on the same CNN by cloning the model and then adjusting the reward function to penalise slower speed.
+
+My thinking was that it would train better if the CNN node weights are first trainer for accuracy and then later to gradually improve speed, ensuring that track completion overall doesn't significantly drop.
+
+### Two Waypoints Ahead - Faster
+![two_faster](/two_waypoints_faster_clone.PNG)
 
 
 
