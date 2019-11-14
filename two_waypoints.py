@@ -21,7 +21,7 @@ def reward_function(params):
     reward = 1.0
 
     #Reward Car Direction Aligned with Upcoming Track Direction (Two Waypoints Ahead)
-    two_waypoints_ahead = waypoints[closest_waypoints[1]+1]
+    two_waypoints_ahead = waypoints[(closest_waypoints[1]+1) % len(waypoints)]
 
     y2 = two_waypoints_ahead[1]
     x2 = two_waypoints_ahead[0]
