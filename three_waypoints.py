@@ -20,16 +20,16 @@ def reward_function(params):
     #Start with initial reward
     reward = 1.0
 
-    #Reward Car Direction Aligned with Upcoming Track Direction (One Waypoints Ahead)
-    one_waypoints_ahead = waypoints[(closest_waypoints[1]) % len(waypoints)]
+    #Reward Car Direction Aligned with Upcoming Track Direction (Three Waypoints Ahead)
+    three_waypoints_ahead = waypoints[(closest_waypoints[1]+2) % len(waypoints)]
 
-    y2 = one_waypoints_ahead[1]
-    x2 = one_waypoints_ahead[0]
+    y3 = three_waypoints_ahead[1]
+    x3 = three_waypoints_ahead[0]
 
-    one_waypoints_ahead_direction = math.degrees(math.atan2(y2 - y, x2 - x))
+    three_waypoints_ahead_direction = math.degrees(math.atan2(y3 - y, x3 - x))
 
     #Heading is based on Positive from X Axis CCW and Negative below X Axis (-180 to 180 deg)
-    heading_difference = abs(one_waypoints_ahead_direction - heading)
+    heading_difference = abs(three_waypoints_ahead_direction - heading)
     if heading_difference > 180:
         heading_difference = 360 - heading_difference
     

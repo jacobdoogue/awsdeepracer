@@ -35,10 +35,10 @@ def reward_function(params):
     
     #Reward Better Aligned direction towards 2 waypoints ahead
     if heading_difference > 15:
-        reward *= 0.7
+        reward *= 0.5
     
     # Reward higher speed
     if speed < 2:
-        reward *= 0.7
+        reward *= 0.5
 
     return float(reward)
